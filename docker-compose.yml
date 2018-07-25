@@ -1,0 +1,18 @@
+version: '3.3'
+
+services:
+        i2b2_db:
+                build:
+                        context: .
+                        args:
+                                - I2B2_VERSION
+                image: i2b2_db:${I2B2_VERSION}
+                ports:
+                        - 5432:5432
+                networks:
+                        - i2b2_test
+                env_file:
+                        - .env
+
+networks:
+        i2b2_test:
