@@ -13,6 +13,10 @@ services:
                         - i2b2_test
                 env_file:
                         - .env
+                volumes:
+                        - i2b2_db_data:/var/lib/postgresql/data
 
 networks:
         i2b2_test:
+volumes:
+        i2b2_db_data:
